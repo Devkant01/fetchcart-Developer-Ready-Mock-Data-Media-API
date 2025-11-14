@@ -18,7 +18,7 @@ export default function ListProductSection() {
   } = useListProducts();
 
   return (
-    <div className="bg-white/90 backdrop-blur-xl shadow-xl rounded-3xl p-6">
+    <div className="max-w-[85%] bg-white/90 backdrop-blur-xl shadow-xl rounded-3xl p-6">
       <h2 className="text-2xl font-semibold text-gray-800 mb-6 flex items-center gap-2">
         📦 Your Products
       </h2>
