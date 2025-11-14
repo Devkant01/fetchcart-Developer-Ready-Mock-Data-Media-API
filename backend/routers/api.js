@@ -1,6 +1,6 @@
 const express = require("express");
 const { isAuthorized } = require('../middleware/isAuthorized.js');
-const { getApiKeys, generateNewApiKey, deleteApiKey } = require('../controllers/User/apiController.js');
+const { getApiKeys, generateNewApiKey, deleteApiKey } = require('../controllers/user/apiController.js');
 
 const app = express.Router();
 
