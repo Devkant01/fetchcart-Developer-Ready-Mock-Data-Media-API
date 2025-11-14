@@ -20,7 +20,7 @@ async function logoutController(req, res){
     res.clearCookie("token", {
         httpOnly: true,
         secure: node_env === 'production' ? true : false,
-        sameSite: 'lax'
+        sameSite: node_env === 'production' ? 'none' : 'lax',
     });
     return res.status(200).send("Logout successful");
 }

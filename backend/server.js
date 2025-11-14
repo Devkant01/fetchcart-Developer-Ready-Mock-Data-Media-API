@@ -38,21 +38,21 @@ app.get('/all-routes', showAllRoutes);
 
 // global catcher
 app.use((req, res) => {
-    if(req.path.startsWith('/api/v1/')) {
+    if (req.path.startsWith('/api/v1/')) {
         return res.status(404).json({ status: "error", message: "Invalid API endpoint. Read documentation for valid endpoints.", link: `${client_url}/docs` });
     }
     res.status(404).json({ status: "error", message: "Route not found. Please check the URL." });
 })
 
-connect().then((e) => {
-    console.log(e);
-    // no need to listen when deploying on vercel
-    // app.listen(PORT, () => {
-    //     console.log(`Server is running: http://localhost:${PORT}`);
-    // })
-})
-    .catch((e) => {
-        console.log(e);
-    })
+// no need to listen when deploying on vercel, we need to make serverless functions
+// connect().then((e) => {
+//     console.log(e);
+//     app.listen(PORT, () => {
+//         console.log(`Server is running: http://localhost:${PORT}`);
+//     })
+// })
+//     .catch((e) => {
+//         console.log(e);
+//     })
 
 module.exports = app;

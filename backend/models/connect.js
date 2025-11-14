@@ -1,12 +1,16 @@
 const mongoose = require("mongoose");
 const { db_connection } = require("../config/config");
 
+let isConnected = false;
+
 async function connect() {
+    if (isConnected) return;
     try {
         await mongoose.connect(db_connection);
-        return Promise.resolve("DB connection established");
+        isConnected = true;
+        console.log("Database connected successfully");
     } catch (e) {
-        return Promise.reject("Failed to Connect DB ", e.message);
+        console.log("Failed to Connect DB ", e.message);
     }
 }
 
