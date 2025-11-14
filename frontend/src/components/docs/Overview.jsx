@@ -10,7 +10,7 @@ export default function Overview() {
             whileInView={{ opacity: 1, y: 0 }}
         >
             <h2 className="text-3xl font-bold mb-4">Overview</h2>
-            <p className="text-gray-700 leading-relaxed">
+            <p className="text-gray-700 leading-relaxed text-justify">
                 FetchCart is a developer-focused API that provides high-quality product
                 images and structured e-commerce data such as titles, descriptions,
                 prices, and seller info — useful for building e-commerce UIs, prototyping,

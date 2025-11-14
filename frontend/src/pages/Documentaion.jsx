@@ -31,7 +31,7 @@ export default function Documentation() {
 
   return (
     <div className="w-full min-h-screen">
-      <div className="mx-auto w-full max-w-[1200px] px-4 lg:px-8 py-10 flex gap-8">
+      <div className="mx-auto w-full max-w-[85%] px-4 lg:px-8 py-10 flex gap-8">
         <Sidebar mobileOpen={mobileOpen} setMobileOpen={setMobileOpen} active={active} />
 
         <main className="flex-1">
