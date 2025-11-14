@@ -27,9 +27,10 @@ export default function TryItLive() {
     } = useTryItLive();
 
     // const baseUrl = import.meta.env.VITE_BACKEND_URL;
-
+    const isFetchingApi = false;
     const fetchUserApiKey = async () => {
         try {
+            isFetchingApi = true;
             const res = await axios.get(`/api/get-api-key`, {
                 withCredentials: true,
             });
@@ -43,6 +44,8 @@ export default function TryItLive() {
 
         } catch (err) {
             toastError(err.response?.data?.message || "Please login to use this feature");
+        } finally {
+            isFetchingApi = false;
         }
     };
 
@@ -84,7 +87,7 @@ export default function TryItLive() {
                                 onClick={fetchUserApiKey}
                                 className="px-4 py-2 text-sm bg-blue-600 text-white rounded-md hover:bg-blue-700 whitespace-nowrap cursor-pointer"
                             >
-                                Use My Key
+                                {isFetchingApi ? "Use My Key" : "getting..."}
                             </button>
                         </div>
                     </div>
