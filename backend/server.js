@@ -54,3 +54,4 @@ connect().then((e) => {
         console.log(e);
     })
 
+export default app;
