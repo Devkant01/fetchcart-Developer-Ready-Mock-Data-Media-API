@@ -21,7 +21,7 @@ export default function ApiGenerator() {
   return (
      <div className="w-full flex justify-center py-10">
       {/* Inner content limited to 85% width */}
-      <div className="w-[85%] bg-white/90 backdrop-blur-xl shadow-xl rounded-3xl p-8 ">
+      <div className="w-full md:w-[85%] bg-white/90 backdrop-blur-xl shadow-xl rounded-3xl p-8 ">
         <h1 className="text-3xl font-bold text-gray-900 mb-2">API Key Management</h1>
         <p className="text-gray-600 mb-6">
           Generate, manage, and revoke your API key below.

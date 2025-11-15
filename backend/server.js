@@ -1,7 +1,9 @@
 const express = require("express");
 require("dotenv").config();
 
+
 const cors = require("cors");
+const { node_env } = require("./config/config");
 const cookieParser = require("cookie-parser");
 const { Router } = require("./routers/router");
 const { connect } = require("./models/connect");
@@ -45,14 +47,15 @@ app.use((req, res) => {
 })
 
 // no need to listen when deploying on vercel, we need to make serverless functions
-// connect().then((e) => {
-//     console.log(e);
-//     app.listen(PORT, () => {
-//         console.log(`Server is running: http://localhost:${PORT}`);
-//     })
-// })
-//     .catch((e) => {
-//         console.log(e);
-//     })
+if (node_env === "development") {
+    connect().then((e) => {
+        app.listen(PORT, () => {
+            console.log(`Server is running: http://localhost:${PORT}`);
+        })
+    })
+        .catch((e) => {
+            console.log("Database connection establishment failed:", e);
+        })
+}
 
 module.exports = app;

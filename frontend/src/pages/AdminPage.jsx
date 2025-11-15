@@ -9,9 +9,9 @@ export default function AdminPage() {
   const [activeTab, setActiveTab] = useState("add");
 
   return (
-    <div className="p-6 w-full mx-auto">
+    <div className="p-6 w-screen mx-auto">
       {/* TOP TAB BUTTONS */}
-      <div className="flex gap-4 mb-6 max-w-[85%]">
+      <div className="flex gap-4 mb-6 max-w-[85%] mx-auto">
         <Button
           variant={activeTab === "add" ? "solid" : "outline"}
           size="md"

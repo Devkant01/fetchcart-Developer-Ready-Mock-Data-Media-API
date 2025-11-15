@@ -21,7 +21,7 @@ export default function AddProductSection() {
     } = useAddProduct();
 
     return (
-        <div className="w-full max-w-[85%] min-h-screen px-4 md:px-10 py-10 bg-white/90 backdrop-blur-xl shadow-xl rounded-3xl">
+        <div className="w-full max-w-[85%] mx-auto min-h-screen px-4 md:px-10 py-10 bg-white/90 backdrop-blur-xl shadow-xl rounded-3xl">
             <h1 className="text-3xl font-bold text-gray-900 mb-8">Add New Product</h1>
 
             <form

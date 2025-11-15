@@ -21,7 +21,6 @@ export default function useListProducts() {
             setLoading(true);
 
             const res = await axios.get("/prod/get-list", {
-                params: { seller },
                 withCredentials: true,
             });
 
